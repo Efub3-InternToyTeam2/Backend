@@ -3,7 +3,7 @@
 
 ## 🍀 Community ERD
 
-<img width="80%" src="https://i.imgur.com/nIYwyh7.png"/></br>
+<img width="80%" src="https://i.imgur.com/JZF9ww5.png"/></br>
 
 
 ## 🍀 REST API 문서 
