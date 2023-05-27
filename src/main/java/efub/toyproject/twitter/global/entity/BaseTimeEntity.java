@@ -1,0 +1,24 @@
+package efub.toyproject.twitter.global.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
+
+@Getter
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public class BaseTimeEntity {
+    @CreatedDate
+    @Column(updatable = false)  // 한 번 삽입하고 나면 값을 수정할 수 없음
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    @Column(insertable = false) // insertable이 false이므로, row를 처음 추가할 때에는 modified_date 값은 null로 들어감. 처음 update할 때 값이 생김.
+    private LocalDateTime modifiedDate;
+}
