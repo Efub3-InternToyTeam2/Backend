@@ -9,3 +9,8 @@
 ## 🍀 REST API 문서 
 
 [REST API 문서 바로가기](https://sphenoid-latency-1e6.notion.site/EFUB-ERD-API-94e72b8e61594a47aa46557ba59cc5b3)
+
+
+## 🍀 Postman 테스트 캡처
+
+[Postman 테스트 캡처 모음 바로가기](https://sphenoid-latency-1e6.notion.site/EFUB-Postman-0072eb4385574bd19bd978ca05b7d517)
