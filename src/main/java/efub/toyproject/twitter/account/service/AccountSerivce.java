@@ -3,13 +3,18 @@ package efub.toyproject.twitter.account.service;
 import efub.toyproject.twitter.account.domain.Account;
 import efub.toyproject.twitter.account.dto.SignUpRequestDto;
 import efub.toyproject.twitter.account.repository.AccountRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 
+@Service
+@Transactional
+@RequiredArgsConstructor
 public class AccountSerivce {
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     public Long signup(SignUpRequestDto requestDto) {
         // 한 번에 한 가지 Exception만 떠야 관리하기 편할 것 같아서 두 개의 else문이 아닌 else if 문으로 처리했음
