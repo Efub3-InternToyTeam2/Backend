@@ -1,9 +1,13 @@
 package efub.toyproject.twitter.account.dto;
 
 import efub.toyproject.twitter.account.domain.Account;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AccountResponseDto {
 
     private Long accountId;
@@ -17,6 +21,7 @@ public class AccountResponseDto {
     private String profile;
 
     // 각 필드값을 모두 받아와 AccountResponseDto 객체를 생성하는 기본 생성자
+    @Builder
     public AccountResponseDto(Long accountId, String handle, String email, String nickname, String profile) {
         this.accountId = accountId;
         this.handle = handle;

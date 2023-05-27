@@ -43,10 +43,10 @@ public class Account extends BaseTimeEntity {
     private String profile;
 
     // 이 유저가 쓴 트윗
-    // mappedBy : 연관 관계의 주인
+    // mappedBy : 연관 관계의 주인 (자식 엔티티에서 부모의 필드명이 무엇인지 적기)
     // cascade : 엔티티 삭제 시 연관된 엔티티의 처리 방식
     // orphanRemoval : 고아 객체의 처리 방식
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "writer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Tweet> tweetList = new ArrayList<>();
 
     @Builder
