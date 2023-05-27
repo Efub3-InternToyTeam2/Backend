@@ -29,6 +29,14 @@ public class AccountSerivce {
                 .orElseThrow(() -> new EntityNotFoundException("해당 ID를 가진 계정이 없습니다."));
     }
 
+    // ID를 기준으로 계정 하나 삭제
+    public void delete(Long accountId) {
+        // 해당 ID를 가진 계정 객체를 데이터베이스에서 찾은 후
+        Account account = findAccountById(accountId);
+        // 그 계정을 삭제
+        accountRepository.delete(account);
+    }
+
     // 이메일 중복체크
     @Transactional(readOnly = true)
     public boolean existsByEmail(String email) {
@@ -40,4 +48,5 @@ public class AccountSerivce {
     public boolean existsByHandle(String handle) {
         return accountRepository.existsByHandle(handle);
     }
+
 }

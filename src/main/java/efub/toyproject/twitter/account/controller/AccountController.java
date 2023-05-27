@@ -38,4 +38,12 @@ public class AccountController {
         return AccountResponseDto.from(findAccount);
     }
 
+    // ID를 기준으로 계정 하나의 정보 삭제
+    @DeleteMapping("/{accountId}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String delete(@PathVariable Long accountId) {
+        accountSerivce.delete(accountId);
+        return "성공적으로 탈퇴가 완료되었습니다.";
+    }
+
 }
